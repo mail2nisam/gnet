@@ -1,0 +1,22 @@
+# Codeception Test Suite Configuration
+#
+# Suite for functional (integration) tests
+# Emulate web requests and make application process them
+# Include one of framework modules (Symfony2, Yii2, Laravel5) to use it
+
+class_name: FunctionalTester
+modules:
+    enabled:
+        # add framework module here
+        - \Helper\Functional
+        - Laravel5
+        - Db
+        - PhpBrowser:
+             url: 'http://homestead.app'
+             curl:
+                 CURLOPT_RETURNTRANSFER: true
+    config:
+        Db:
+          dsn: 'sqlite:storage/database/active_test_db.sqlite'
+        Laravel5:
+          environment_file: .env.codeception
