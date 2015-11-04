@@ -6,3 +6,5 @@ Homestead.yaml
 
 tests/_output/*
 storage/database/*
+/.project
+/nbproject/private/

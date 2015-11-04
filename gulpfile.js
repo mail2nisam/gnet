@@ -1,4 +1,4 @@
-var elixir = require('laravel-elixir');\
+var elixir = require('laravel-elixir');
 /*
  |--------------------------------------------------------------------------
  | Elixir Asset Management
@@ -15,5 +15,8 @@ var elixir = require('laravel-elixir');\
  * We are using custom settings and sqlite for unit testing.
  */
 elixir(function(mix) {
-    mix.sass('app.scss');
+    mix.less('app.less');
+    mix.styles([
+        'bootstrap.css',
+    ]);
 });

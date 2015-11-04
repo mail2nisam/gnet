@@ -15,7 +15,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/nisam', function(){
-    return 'Hello nisam';
-});
-Route::get('signup', ['as' => 'signup', 'uses' => 'UserController@getSignup']);
+Route::controllers([
+    '/' => 'Auth\AuthController',
+    'password' => 'Auth\PasswordController',
+]);
+
+Route::resource('image','ImageController');
+Route::resource('image_type','ImageTypeController');
